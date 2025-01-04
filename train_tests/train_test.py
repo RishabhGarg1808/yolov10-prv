@@ -6,9 +6,14 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-from ultralytics.models import YOLO
+from ultralytics.models import YOLOv10
 
-model = YOLO()
+model = YOLOv10("yolov10-custom.yaml")
 model.train(data="sample/data.yaml",
             model = "yolov10-custom.yaml",
-            epochs=50,pretrained=False, imgsz=32, name="yolov10-custom",simplify=True)
+            epochs=50,
+            pretrained=False,
+            imgsz=32,
+            name="yolov10-custom",
+            simplify=False,
+            )
